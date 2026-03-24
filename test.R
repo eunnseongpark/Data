@@ -1,11 +1,3 @@
-############################################################
-# KoWePS 보험 해지행동 분석
-# 완전 재현 스크립트 (논문 그래프 + 표 포함)
-############################################################
-
-# ============================================================
-# [0] 라이브러리 설치 및 로드
-# ============================================================
 pkgs <- c(
   "haven", "dplyr", "tidyr", "purrr", "ggplot2", "splines",
   "nnet", "sandwich", "lmtest", "boot", "broom", "scales",
@@ -20,18 +12,12 @@ if(length(to_install) > 0) {
 
 invisible(lapply(pkgs, library, character.only = TRUE))
 
-# 전역 옵션
 options(scipen = 999)
 set.seed(42)
 theme_set(theme_minimal(base_size = 11))
 
-# 출력 디렉토리
 out_dir <- "outputs_koweps_final"
 if(!dir.exists(out_dir)) dir.create(out_dir)
-
-cat("========================================\n")
-cat("KoWePS 보험 해지행동 분석 - 완전 재현\n")
-cat("========================================\n\n")
 
 # ============================================================
 # [1] 데이터 로드
@@ -1005,5 +991,3 @@ cat("  - T_best_tau_decreaseonly.csv\n")
 cat("  - T_exit_counts_around_threshold.csv\n")
 cat("  - T_decreaseonly_counts_around_threshold.csv\n")
 cat("  - FINAL_REPORT.txt\n\n")
-
-cat("논문 재현 100% 완료!\n")
